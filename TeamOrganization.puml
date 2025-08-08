@@ -1,0 +1,152 @@
+@startuml TeamOrganization
+
+package "Orquestração" {
+    class ProjectOrchestrator
+    class TechLeadOrchestrator
+    class TeamConfigurator
+}
+
+package "Análise & Produto" {
+    class ProjectAnalyst
+    class ProductAnalyst
+}
+
+package "Documentação & Qualidade" {
+    class DocumentationSpecialist
+    class CodeReviewer
+    class QATestEngineer
+    class ManualQAAnalyst
+    class TestAutomationSpecialist
+}
+
+package "Backend" {
+    class BackendApiArchitect
+    class BackendDeveloper
+    class CSharpBackendEngineer
+    class PythonBackendEngineer
+    class JavaBackendEngineer
+    class PhpBackendEngineer
+    class NodejsDeveloper
+    class RubyBackendEngineer
+    class DjangoBackendExpert
+    class DjangoApiDeveloper
+    class DjangoOrmExpert
+    class LaravelBackendExpert
+    class LaravelEloquentExpert
+    class RailsBackendExpert
+    class RailsActiveRecordExpert
+    class RailsApiDeveloper
+    class CobolDeveloper
+}
+
+package "Frontend" {
+    class FrontendDeveloper
+    class ReactFrontendEngineer
+    class ReactNextjsExpert
+    class ReactComponentArchitect
+    class AngularFrontendEngineer
+    class VueFrontendEngineer
+    class VueComponentArchitect
+    class VueNuxtExpert
+    class VueStateManager
+    class SwiftUIArchitect
+    class FlutterMobileDeveloper
+    class FlutterTester
+    class TailwindCssExpert
+    class NextjsProjectBootstrapper
+}
+
+package "DB & Infra" {
+    class DatabaseModelingExpert
+    class SqlEngineer
+    class OracleDBA
+    class PostgresqlExpert
+    class MongoDBSpecialist
+    class RedisArchitect
+    class DevOpsEngineer
+    class DevSecOpsEngineer
+    class TerraformInfrastructureBuilder
+}
+
+package "Security" {
+    class SecurityArchitect
+    class SecurityAuditSpecialist
+    class SecurityTester
+}
+
+package "Performance/FinOps/ML" {
+    class PerformanceOptimizer
+    class FinOpsAnalyst
+    class MlEngineer
+    class GraphqlSpecialist
+}
+
+' Fluxo resumido de uso
+ProjectOrchestrator --> TeamConfigurator
+ProjectOrchestrator --> ProjectAnalyst
+ProjectOrchestrator --> ProductAnalyst
+ProjectOrchestrator --> TechLeadOrchestrator
+
+TechLeadOrchestrator --> BackendApiArchitect
+TechLeadOrchestrator --> FrontendDeveloper
+TechLeadOrchestrator --> DatabaseModelingExpert
+TechLeadOrchestrator --> DevOpsEngineer
+TechLeadOrchestrator --> SecurityArchitect
+
+BackendApiArchitect --> BackendDeveloper
+BackendApiArchitect --> CSharpBackendEngineer
+BackendApiArchitect --> PythonBackendEngineer
+BackendApiArchitect --> JavaBackendEngineer
+BackendApiArchitect --> PhpBackendEngineer
+BackendApiArchitect --> NodejsDeveloper
+BackendApiArchitect --> RubyBackendEngineer
+BackendApiArchitect --> DjangoBackendExpert
+BackendApiArchitect --> LaravelBackendExpert
+BackendApiArchitect --> RailsBackendExpert
+
+FrontendDeveloper --> ReactFrontendEngineer
+FrontendDeveloper --> AngularFrontendEngineer
+FrontendDeveloper --> VueFrontendEngineer
+FrontendDeveloper --> FlutterMobileDeveloper
+FrontendDeveloper --> TailwindCssExpert
+FrontendDeveloper --> NextjsProjectBootstrapper
+
+DatabaseModelingExpert --> SqlEngineer
+DatabaseModelingExpert --> OracleDBA
+DatabaseModelingExpert --> PostgresqlExpert
+DatabaseModelingExpert --> MongoDBSpecialist
+DatabaseModelingExpert --> RedisArchitect
+
+DevOpsEngineer --> TerraformInfrastructureBuilder
+DevOpsEngineer --> DevSecOpsEngineer
+
+ProjectOrchestrator --> DocumentationSpecialist
+ProjectOrchestrator --> QATestEngineer
+ProjectOrchestrator --> PerformanceOptimizer
+ProjectOrchestrator --> FinOpsAnalyst
+
+SecurityArchitect --> SecurityAuditSpecialist
+SecurityAuditSpecialist --> SecurityTester
+
+QATestEngineer --> TestAutomationSpecialist
+QATestEngineer --> ManualQAAnalyst
+QATestEngineer --> FlutterTester
+
+' Relações de especialização
+DjangoBackendExpert --> DjangoApiDeveloper
+DjangoBackendExpert --> DjangoOrmExpert
+LaravelBackendExpert --> LaravelEloquentExpert
+RailsBackendExpert --> RailsActiveRecordExpert
+RailsBackendExpert --> RailsApiDeveloper
+ReactFrontendEngineer --> ReactNextjsExpert
+ReactFrontendEngineer --> ReactComponentArchitect
+VueFrontendEngineer --> VueComponentArchitect
+VueFrontendEngineer --> VueNuxtExpert
+VueFrontendEngineer --> VueStateManager
+
+note bottom of ProjectOrchestrator
+  Para stacks específicas, a ligação se dá 
+  conforme a escolha no início do projeto.
+end note
+
+@enduml
